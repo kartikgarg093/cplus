@@ -10,19 +10,16 @@ int main(){
     for(i=0;i<n;i++){
         cin>>a[i];
     }
-    for(i=1;i<n;i++)
+    for(i=0;i<n-1;i++)
     {
-      int  temp=a[i];
-        for(j=i-1;j>-1;j--)
+        for(j=0;j<n-1-i;j++)
         {
-            if(a[j]>temp)
+            if (a[j]>a[j+1])
             {
-                a[j+1]=a[j];
-                a[j]=temp;
-            }
-            else
-            {
-                break;
+               int c=a[j];
+               a[j]=a[j+1];
+               a[j+1]=c;
+
             }
         }
     }

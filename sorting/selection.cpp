@@ -10,26 +10,23 @@ int main(){
     for(i=0;i<n;i++){
         cin>>a[i];
     }
-    for(i=1;i<n;i++)
+    for(i=0;i<n-1;i++)
     {
-      int  temp=a[i];
-        for(j=i-1;j>-1;j--)
+        int min=i;
+        for(j=i+1;j<n;j++)
         {
-            if(a[j]>temp)
+            if (a[j]<a[min])
             {
-                a[j+1]=a[j];
-                a[j]=temp;
-            }
-            else
-            {
-                break;
+                min=j;
             }
         }
+        int c=a[i];
+        a[i]=a[min];
+        a[min]=c;
     }
     cout<<"sorted array is:";
     for(i=0;i<n;i++){
         cout<<a[i]<<" ";
     }
     return 0;
-
 }
