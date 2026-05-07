@@ -5,7 +5,7 @@ int main() {
    int n,i;
    cout<<"Enter size of array:";
    cin>>n;
-   vector<int> a(n);
+   int a[n];
    cout<<"Enter elements of array:";
    for(i=0;i<n;i++)
    {
@@ -19,7 +19,7 @@ int main() {
            max=a[i];
        }
     }
-    vector<int> b(max+1,0);
+    int b[max+1]={0};
    for(i=0;i<n;i++)
    {
        b[a[i]]++;
@@ -29,7 +29,7 @@ int main() {
    {
          b[i]=b[i]+b[i-1];
    }
-    vector<int> c(n);
+    int c[n];
     for(i=n-1;i>-1;i++)
     {
         c[b[a[i]]-1]=a[i];
